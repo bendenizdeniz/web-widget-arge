@@ -1,0 +1,112 @@
+
+body {
+    
+    background-color: red;
+}
+
+.widget-container{
+    color: white;
+}
+.header-wrapper {
+    display: 'flex';
+    justify-content: 'center';
+}
+.messages-container {
+    margin: 50px auto;
+    max-width: 300px;
+}
+.speech-bubble {
+    padding: 20px;
+    background: #EEEEEE;
+    color: #EEEEEE;
+    position: relative;
+    box-shadow: rgba(0,0,0,0.5) 0 3px 5px -3px;
+    margin: 20px 0;
+}
+.speech-bubble:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    top: 0px;
+    border-color: #EEEEEE;
+}
+.speech-bubble.speech-bubble-left {
+    margin-left: 20px;
+    border-radius: 0 4px 4px 4px;
+}
+.speech-bubble.speech-bubble-left:after {
+    border-width: 0 20px 24px 0;
+    border-top-color: transparent !important;
+    border-left-color: transparent !important;
+    border-bottom-color: transparent !important;
+    left: -20px;
+}
+.speech-bubble.speech-bubble-right {
+    margin-right: 20px;
+    border-radius: 4px 0 4px 4px;
+}
+.speech-bubble.speech-bubble-right:after {
+    border-width: 0 0 24px 20px;
+    border-top-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+    right: -20px;
+}
+.speech-bubble.speech-bubble-bottom-right {
+    margin-bottom: 40px;
+    border-radius: 4px;
+}
+.speech-bubble.speech-bubble-bottom-right:after {
+    border-width: 0 24px 20px 0;
+    border-top-color: transparent !important;
+    border-left-color: transparent !important;
+    border-bottom-color: transparent !important;
+    top: auto;
+    right: 20px;
+    bottom: -20px;
+}
+.speech-bubble.speech-bubble-bottom-left {
+    margin-bottom: 40px;
+    border-radius: 4px;
+}
+.speech-bubble.speech-bubble-bottom-left:after {
+    border-width: 0 0 20px 24px;
+    border-top-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+    top: auto;
+    left: 20px;
+    bottom: -20px;
+}
+.speech-bubble.speech-bubble-red {
+    color: #EEEEEE;
+    background: #F44336;
+}
+.speech-bubble.speech-bubble-red:after {
+    border-color: #F44336;
+}
+.speech-bubble.speech-bubble-purple {
+    color: #EEEEEE;
+    background: #9C27B0;
+}
+.speech-bubble.speech-bubble-purple:after {
+    border-color: #9C27B0;
+}
+.speech-bubble.speech-bubble-green {
+    color: #EEEEEE;
+    background: #8BC34A;
+}
+.speech-bubble.speech-bubble-green:after {
+    border-color: #8BC34A;
+}
+
+.footer-wrapper{
+    padding: 20px 5px 5px 5px;
+}
+
+.footer-send-button{
+
+}

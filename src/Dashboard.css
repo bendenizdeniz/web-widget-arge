@@ -1,0 +1,13 @@
+.iframe-wrapper{
+    display: flex;
+    justify-content: flex-end;
+}
+
+iframe{
+border-radius: 10px;
+align-self: flex-end;
+border: 1px solid #03555e;
+box-shadow: 4px 4px 4px rgb(0 0 0 / 40%);
+background: rgb(39,93,107);
+background: linear-gradient(90deg, rgba(39,93,107,1) 18%, rgba(108,171,124,1) 77%);
+}
