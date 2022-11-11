@@ -18,9 +18,6 @@ export const WidgetContainer = ({ license = "", greeting = "" }) => {
                 direction: "incoming",
             }));
         }
-
-        console.log(greeting);
-        console.log(messages);
     }, [greeting, messages]);
 
     const handleSend = (message) => {
