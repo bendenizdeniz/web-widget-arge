@@ -6,11 +6,6 @@ export const CustomWidget = ({ remoteName = "", messages = [], handleSend }) => 
     const inputRef = useRef();
     const widgetContainerRef = useRef();
 
-    useEffect(() => {
-        widgetContainerRef.current &&
-            console.log(widgetContainerRef.current);
-    }, [widgetContainerRef.current]);
-
     return (
         <div className="container">
             <div className="widget-container" ref={widgetContainerRef}>
@@ -64,9 +59,7 @@ export const CustomWidget = ({ remoteName = "", messages = [], handleSend }) => 
                 <button
                     className='visible-toggle-button'
                     onClick={() => {
-                        widgetContainerRef.current.style.display === 'none' ?
-                            widgetContainerRef.current.style.display = 'block' :
-                            widgetContainerRef.current.style.display = 'none'
+                        widgetContainerRef.current.style.display = widgetContainerRef.current.style.display === 'none' ? 'block' : 'none';
                     }}
                 >
                     Toggle Widget
