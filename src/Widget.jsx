@@ -32,10 +32,10 @@ export const Widget = ({ remoteName = "", messages = [], onSend }) => {
 
             </MessageList>
 
-             <MessageInput placeholder="Type message here"
+            <MessageInput placeholder="Type message here"
                 attachButton={false}
                 onSend={onSend}
-            /> 
+            />
         </ChatContainer>
     </MainContainer>);
 
