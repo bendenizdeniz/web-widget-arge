@@ -1,22 +1,55 @@
-.widget-container{
-    color: white;
+.container {
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    width: 350px;
 }
+
+.widget-container {
+    height: 500px;
+    max-height: 600;
+    width: 350px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 5px solid;
+    border-image: linear-gradient(90deg, rgba(3, 85, 94, 1), rgba(255, 35, 0, 1)) 1;
+    /* border-radius: 4px; */
+    /* position: fixed; */
+}
+
 .header-wrapper {
-    display: 'flex';
-    justify-content: 'center';
+    /* background: white; */
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px dotted red; */
 }
+
 .messages-container {
-    margin: 50px auto;
-    max-width: 300px;
+    margin: 10px auto;
+    width: 340px;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    /* background: white; */
+    /* color: white; */
+    padding: 3px;
 }
+
 .speech-bubble {
     padding: 20px;
     background: #EEEEEE;
     color: #EEEEEE;
     position: relative;
-    box-shadow: rgba(0,0,0,0.5) 0 3px 5px -3px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 3px 5px -3px;
     margin: 20px 0;
 }
+
 .speech-bubble:after {
     content: '';
     display: block;
@@ -27,10 +60,12 @@
     top: 0px;
     border-color: #EEEEEE;
 }
+
 .speech-bubble.speech-bubble-left {
     margin-left: 20px;
     border-radius: 0 4px 4px 4px;
 }
+
 .speech-bubble.speech-bubble-left:after {
     border-width: 0 20px 24px 0;
     border-top-color: transparent !important;
@@ -38,10 +73,12 @@
     border-bottom-color: transparent !important;
     left: -20px;
 }
+
 .speech-bubble.speech-bubble-right {
     margin-right: 20px;
     border-radius: 4px 0 4px 4px;
 }
+
 .speech-bubble.speech-bubble-right:after {
     border-width: 0 0 24px 20px;
     border-top-color: transparent !important;
@@ -49,10 +86,12 @@
     border-bottom-color: transparent !important;
     right: -20px;
 }
+
 .speech-bubble.speech-bubble-bottom-right {
     margin-bottom: 40px;
     border-radius: 4px;
 }
+
 .speech-bubble.speech-bubble-bottom-right:after {
     border-width: 0 24px 20px 0;
     border-top-color: transparent !important;
@@ -62,10 +101,12 @@
     right: 20px;
     bottom: -20px;
 }
+
 .speech-bubble.speech-bubble-bottom-left {
     margin-bottom: 40px;
     border-radius: 4px;
 }
+
 .speech-bubble.speech-bubble-bottom-left:after {
     border-width: 0 0 20px 24px;
     border-top-color: transparent !important;
@@ -75,32 +116,68 @@
     left: 20px;
     bottom: -20px;
 }
+
 .speech-bubble.speech-bubble-red {
     color: #EEEEEE;
-    background: #F44336;
+    background: rgba(255, 35, 0, 1);
 }
+
 .speech-bubble.speech-bubble-red:after {
-    border-color: #F44336;
+    border-color: rgba(255, 35, 0, 1);
 }
-.speech-bubble.speech-bubble-purple {
-    color: #EEEEEE;
-    background: #9C27B0;
-}
-.speech-bubble.speech-bubble-purple:after {
-    border-color: #9C27B0;
-}
+
 .speech-bubble.speech-bubble-green {
     color: #EEEEEE;
-    background: #8BC34A;
+    background: rgba(3, 85, 94, 1);
 }
+
 .speech-bubble.speech-bubble-green:after {
-    border-color: #8BC34A;
+    border-color: rgba(3, 85, 94, 1)
 }
 
-.footer-wrapper{
-    padding: 20px 5px 5px 5px;
+.footer-wrapper {
+    /* border: 1px dotted red; */
+    /* background-color: white; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.footer-send-button{
+input {
+    width: 100%;
+    border-radius: 4px;
+    border: 0.5px solid rgba(3, 85, 94, 1);
+    box-shadow: 0 0 10px #606264;
+}
 
+input:focus {
+    outline: none !important;
+    box-shadow: 0 0 10px rgba(3, 85, 94, 1);
+}
+
+button {
+    background-color: rgba(3, 85, 94, 1);
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.footer-send-button {
+    width: 70px;
+    height: 25px;
+    margin-left: 0.5rem;
+}
+
+.toggle-container {
+    margin-top: 15px;
+    align-self: flex-end;
+}
+
+.toggle-container>button {
+    width: 100px;
+    height: 40px;
 }
