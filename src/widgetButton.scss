@@ -1,0 +1,53 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+body{
+  background-color: #fff;
+  .logoWrapper{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 48px;
+    margin-right: 48px;
+    background-color: #fff;
+    border: 1px solid rgba(168, 159, 159, 0.5);
+    box-shadow: 4px 4px 14px rgba(3, 85, 94, 40%);
+    border-radius: 50%;
+  }
+  .pathWrapper{
+    transition: 0.8s;
+    transform: rotate(0);
+    padding: 5px;
+    cursor: pointer;
+    &:hover{
+      padding: 0;
+      width: 75px;
+      height: 75px;
+      transform: rotate(180deg);
+    }
+  }
+//   .path1{
+//     &:hover{
+//       animation: path1 1s ease;
+//     }
+//   }
+//   @keyframes path1 {
+//     from{     
+//     transform: translateY(0);
+//   }
+//   to{
+//     transform: translateY(100%);
+//   }
+// }
+}

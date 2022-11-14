@@ -1,9 +1,11 @@
 import { Dashboard } from "./Dashboard";
+import WidgetButton from "./widgetButton";
 
 function App() {
   return (
     <div>
-      <Dashboard />
+      {/* <Dashboard /> */}
+      <WidgetButton/>
     </div>
   );
 }
