@@ -60,11 +60,10 @@ export const CustomWidget = ({ remoteName = "", messages = [], handleSend }) => 
                 <button
                     className='visible-toggle-button'
                     onClick={() => {
-                        widgetContainerRef.current.style.display = widgetContainerRef.current.style.display === 'none' ? 'block' : 'none';
+                        widgetContainerRef.current.style.visibility = widgetContainerRef.current.style.visibility === 'hidden' ? 'visible' : 'hidden';
                     }}
                 >
                     Toggle Widget
-                    <img src="/public/registerlogo.svg" alt="" />
                 </button>
             </div>
         </div >
