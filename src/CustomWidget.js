@@ -7,11 +7,6 @@ export const CustomWidget = ({ remoteName = "", messages = [], handleSend }) => 
     const widgetContainerRef = useRef();
     const [isButtonActive, setIsButtonActive] = useState(false);
 
-    useEffect(() => {
-        widgetContainerRef.current &&
-            console.log(widgetContainerRef.current);
-    }, [widgetContainerRef.current]);
-
     return (
         <div className="container">
             <div className={`widget-container ${isButtonActive ? 'active':''} `} ref={widgetContainerRef}>
@@ -65,9 +60,7 @@ export const CustomWidget = ({ remoteName = "", messages = [], handleSend }) => 
                 <button
                     className='visible-toggle-button'
                     onClick={() => {
-                        widgetContainerRef.current.style.display === 'none' ?
-                            widgetContainerRef.current.style.display = 'block' :
-                            widgetContainerRef.current.style.display = 'none'
+                        widgetContainerRef.current.style.display = widgetContainerRef.current.style.display === 'none' ? 'block' : 'none';
                     }}
                 >
                     Toggle Widget

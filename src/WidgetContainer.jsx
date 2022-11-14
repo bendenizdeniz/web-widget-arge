@@ -13,13 +13,11 @@ export const WidgetContainer = ({ license = "", greeting = "" }) => {
         if (greeting && messages.length === 0) {
             setMessages(messages.concat({
                 _id: getRandomNumber(),
-                message: greeting,
+                message: `${greeting && greeting} How we can help you?`,
                 sender: "remote",
                 direction: "incoming",
             }));
         }
-
-        console.log(messages);
     }, [greeting, messages]);
 
     const handleSend = (message) => {
