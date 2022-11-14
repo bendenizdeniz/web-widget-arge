@@ -1,9 +1,10 @@
-import { Dashboard } from "./Dashboard";
+import React from "react";
+import Widget from "./Widget";
 
 function App() {
   return (
     <div>
-      <Dashboard />
+      <Widget />
     </div>
   );
 }
