@@ -1,6 +1,8 @@
 #root {
-  position:relative;
-  height:100%;
+  position: relative;
+  width: 500px;
+  height: 647px;
+  overflow: hidden;
   /* justify-content: center;
   align-items: center;
   display: flex; */

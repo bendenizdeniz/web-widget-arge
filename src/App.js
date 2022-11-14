@@ -3,6 +3,7 @@ import './App.css';
 import {WidgetContainer} from "./WidgetContainer";
 import { useChat } from "./ChatProvider";
 import {nanoid} from "nanoid";
+import Landing from "./Landing";
 
 function App() {
   
@@ -20,7 +21,6 @@ function App() {
   useEffect(() => {
 
     const handleMessage = evt => {
-      console.log(evt.data)
       if ( "greeting" in evt.data ) {
         setGreeting(evt.data.greeting);
       } else if  ( "sendMessage" in evt.data ) {
@@ -40,7 +40,9 @@ function App() {
   },[setGreeting, sendMessage]);
   
   return (
-      <WidgetContainer license={license} greeting={greeting} />
+    <>
+    <Landing />
+    </>
   );
 }
 
