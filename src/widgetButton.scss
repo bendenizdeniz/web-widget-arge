@@ -35,8 +35,52 @@ body{
       width: 75px;
       height: 75px;
       transform: rotate(180deg);
-    }
+      .path1{
+         animation: path1 2s infinite;
+      }
+      .path2{
+         animation: path2 2s infinite;
+      }
+      .path3{
+         animation: path3 2s infinite;
+      }
+      .path4{
+         animation: path4 2s infinite;
+      }
+     @keyframes path1 {
+      from{     
+       transform: translateY(0);
+     }
+     to{
+      transform: translateY(25%);
+     }
+   }
+     @keyframes path2 {
+      from{     
+       transform: translateX(0);
+     }
+     to{
+      transform: translateX(-25%);
+     }
+   }
+     @keyframes path3 {
+      from{     
+       transform: translateX(0);
+     }
+     to{
+      transform: translateX(25%);
+     }
+   }
+     @keyframes path4 {
+      from{     
+       transform: translateY(0);
+     }
+     to{
+      transform: translateY(-25%);
+     }
+   }
   }
+}
 //   .path1{
 //     &:hover{
 //       animation: path1 1s ease;
