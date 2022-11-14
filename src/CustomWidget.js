@@ -5,6 +5,7 @@ export const CustomWidget = ({ remoteName = "", messages = [], handleSend }) => 
     const [message, setMessage] = useState("");
     const inputRef = useRef();
     const widgetContainerRef = useRef();
+    const [isButtonActive, setIsButtonActive] = useState(false);
 
     useEffect(() => {
         widgetContainerRef.current &&
@@ -13,9 +14,9 @@ export const CustomWidget = ({ remoteName = "", messages = [], handleSend }) => 
 
     return (
         <div className="container">
-            <div className="widget-container" ref={widgetContainerRef}>
+            <div className={`widget-container ${isButtonActive ? 'active':''} `} ref={widgetContainerRef}>
                 <section className="header-wrapper">
-                    <header>Servicestone Widget Flow</header>
+                <div className='header-title'>Servicestone Widget Flow</div>
                 </section>
 
                 <section className="messages-container">
@@ -38,7 +39,7 @@ export const CustomWidget = ({ remoteName = "", messages = [], handleSend }) => 
 
                     }
                 </section>
-
+                
                 <section className="footer-wrapper">
                     <input
                         type="text"
@@ -70,6 +71,7 @@ export const CustomWidget = ({ remoteName = "", messages = [], handleSend }) => 
                     }}
                 >
                     Toggle Widget
+                    <img src="/public/registerlogo.svg" alt="" />
                 </button>
             </div>
         </div >

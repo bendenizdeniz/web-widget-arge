@@ -1,4 +1,4 @@
-.widget-container{
+/* .widget-container{
     color: white;
 }
 .header-wrapper {
@@ -7,7 +7,8 @@
 }
 .messages-container {
     margin: 50px auto;
-    max-width: 300px;
+    width: 100%;
+    padding: 2rem;
 }
 .speech-bubble {
     padding: 20px;
@@ -103,4 +104,4 @@
 
 .footer-send-button{
 
-}
+} */
