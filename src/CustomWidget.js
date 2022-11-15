@@ -56,7 +56,7 @@ export const CustomWidget = ({ remoteName = "", messages = [], handleSend }) => 
                 </section>
             </div>
 
-            <div className='toggle-container'>
+            {/* <div className='toggle-container'>
                 <button
                     className='visible-toggle-button'
                     onClick={() => {
@@ -65,7 +65,7 @@ export const CustomWidget = ({ remoteName = "", messages = [], handleSend }) => 
                 >
                     Toggle Widget
                 </button>
-            </div>
+            </div> */}
         </div >
     )
 }
