@@ -1,0 +1,26 @@
+.landing {
+    overflow: hidden;
+    scrollbar-width: none;
+    background-color: white;
+    width: 500px;
+    height: 647px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  
+  #logo {
+    display: block;
+    margin: auto;
+    margin-top: auto;
+    width: 25%;
+  
+  }
+  
+  #stoneity {
+    display: block;
+    margin: auto;
+  
+  }

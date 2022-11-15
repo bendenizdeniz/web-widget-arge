@@ -1,48 +1,60 @@
-import { useState, useEffect } from "react";
-import { CustomWidget } from "./CustomWidget";
 
-export const WidgetContainer = ({ license = "", greeting = "" }) => {
+import { useEffect, useMemo } from "react";
+import { Widget } from "./Widget";
+import { nanoid } from "nanoid";
+import {useChat} from "./ChatProvider";
 
-    const [messages, setMessages] = useState([]);
+export const WidgetContainer = ({license = "", greeting = ""}) => {
 
-    const getRandomNumber = () => {
-        return Math.floor((Math.random() * 100000) + 1);
-    }
+    const {messages, sendMessage} = useChat();
 
-    useEffect(() => {
-        if (greeting && messages.length === 0) {
-            setMessages(messages.concat({
-                _id: getRandomNumber(),
-                message: `${greeting && greeting} How we can help you?`,
+    useEffect( () => {
+        if ( greeting && messages.length === 0 ) {
+            console.log("a")
+            sendMessage({
+                _id: nanoid(),
+                message: greeting,
                 sender: "remote",
                 direction: "incoming",
-            }));
+            });
         }
-    }, [greeting, messages]);
+    },[greeting, messages]);
+
+    const remoteName = useMemo( () => {
+        if ( license === "123" ) {
+            return "Chatscope";
+        } else if (license === "456" ) {
+            return "ChatKitty";
+        } else if (license === "789" ) {
+            return "EvilNull";
+        }
+    },[license]);
+
 
     const handleSend = (message) => {
         const newMessages = [
             {
-                _id: getRandomNumber(),
+
+                _id: nanoid(),
+
                 message,
                 sender: "me",
                 direction: "outgoing",
             },
             {
-                _id: getRandomNumber(),
+
+                _id: nanoid(),
                 message: `ECHO: ${message}`,
                 sender: "remote",
                 direction: "incoming",
             }
         ];
-        setMessages(messages.concat(newMessages));
+
+        sendMessage(newMessages);
     };
 
-    return (
-        <>
-            <CustomWidget messages={messages} handleSend={handleSend} />
-        </>
-    );
+    return <Widget remoteName={remoteName} messages={messages} onSend={handleSend} />
+
 
 };
 

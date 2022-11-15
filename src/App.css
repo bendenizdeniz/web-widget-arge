@@ -1,4 +1,14 @@
-.App {
+#root {
+  position: relative;
+  width: 500px;
+  height: 647px;
+  overflow: hidden;
+  /* justify-content: center;
+  align-items: center;
+  display: flex; */
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +45,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

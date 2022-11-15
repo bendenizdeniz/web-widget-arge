@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
-import { Dashboard } from "./Dashboard";
+import "./App.css";
 import { WidgetContainer } from "./WidgetContainer";
+import { useChat } from "./ChatProvider";
+import { nanoid } from "nanoid";
+import Landing from "./Landing";
 
 function App() {
+  const { sendMessage } = useChat();
   const [license, setLicense] = useState("");
   const [greeting, setGreeting] = useState();
 
@@ -14,24 +18,28 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const handleMessage = evt => {
-      if ("greetingMessage" in evt.data) {
-        setGreeting(evt.data.greetingMessage);
+    const handleMessage = (evt) => {
+      if ("greeting" in evt.data) {
+        setGreeting(evt.data.greeting);
+      } else if ("sendMessage" in evt.data) {
+        sendMessage({
+          _id: nanoid(),
+          message: evt.data.sendMessage,
+          sender: "remote",
+          direction: "outgoing",
+        });
       }
     };
 
     window.addEventListener("message", handleMessage);
+
     return () => window.removeEventListener("message", handleMessage);
-  }, [setGreeting]);
+  }, [setGreeting, sendMessage]);
 
   return (
-    <div>
-      {/* <Dashboard /> */}
-      <WidgetContainer
-        license={license}
-        greeting={greeting}
-      />
-    </div>
+    <>
+      <Landing />
+    </>
   );
 }
 
